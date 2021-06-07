@@ -19,3 +19,5 @@ CFG_HWRNG_PTA ?= y
 supported-ta-targets = ta_arm64
 
 CFG_DT ?= y
+
+CFG_RPROC_PTA ?= y

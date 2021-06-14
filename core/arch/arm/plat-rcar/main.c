@@ -41,6 +41,19 @@ register_phys_mem_pgdir(MEM_AREA_IO_SEC, PRR_BASE, SMALL_PAGE_SIZE);
 register_phys_mem_pgdir(MEM_AREA_IO_SEC, GICD_BASE, GIC_DIST_REG_SIZE);
 register_phys_mem_pgdir(MEM_AREA_IO_SEC, GICC_BASE, GIC_DIST_REG_SIZE);
 
+
+#ifdef DEVICE0_PA_BASE
+register_phys_mem_pgdir(DEVICE0_TYPE, DEVICE0_PA_BASE, DEVICE0_SIZE);
+#endif
+#ifdef DEVICE1_PA_BASE
+register_phys_mem_pgdir(DEVICE1_TYPE, DEVICE1_PA_BASE, DEVICE1_SIZE);
+#endif
+#ifdef DEVICE2_PA_BASE
+register_phys_mem_pgdir(DEVICE2_TYPE, DEVICE2_PA_BASE, DEVICE2_SIZE);
+#endif
+
+
+
 /* Legacy platforms */
 #if defined(PLATFORM_FLAVOR_salvator_h3) || \
 	defined(PLATFORM_FLAVOR_salvator_h3_4x2g) || \

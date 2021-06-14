@@ -69,6 +69,8 @@ register_ddr(NSEC_DDR_3_BASE, NSEC_DDR_3_SIZE);
 #endif
 #endif
 
+register_phys_mem_pgdir(MEMORY_CR7_TYPE, MEMORY_CR7_BASE, MEMORY_CR7_SIZE);
+
 static struct scif_uart_data console_data __nex_bss;
 uint32_t rcar_prr_value __nex_bss;
 

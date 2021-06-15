@@ -716,6 +716,9 @@ static TEE_Result remoteproc_get_rsc_table(uint32_t pt,
 	if (ctx->state == REMOTEPROC_OFF)
 		return TEE_ERROR_BAD_STATE;
 
+	if (!ctx->rsc_pa)
+		return TEE_ERROR_NO_DATA;
+
 	reg_pair_from_64((uint64_t)ctx->rsc_pa,
 			 &params[1].value.b, &params[1].value.a);
 	reg_pair_from_64((uint64_t)ctx->rsc_size,
